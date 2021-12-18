@@ -1,0 +1,128 @@
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  background: #efdec1;
+}
+
+.container {
+  width: 400px;
+  margin: 8px auto;
+  background: #fff;
+  padding: 8px;
+  position: relative;
+}
+
+#question {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#choices {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+  list-style: none;
+}
+
+#choices > li.correct {
+  background: rgb(5, 202, 5);
+  border: rgb(3, 56, 3);
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+}
+
+#choices > li.correct::after {
+  content: ' ... correct!';
+}
+
+
+#choices > li.wrong {
+  background: rgb(206, 32, 61);
+  color: white;
+  border: rgb(116, 7, 7);
+  font-weight: bold;
+  opacity: 1;
+}
+
+#choices > li.wrong::after {
+  content: ' ... wrong!';
+}
+
+#choices > li {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+#choices > li:hover {
+  opacity: 0.65;
+}
+#btn {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100px;
+  background:  rgb(12, 163, 223);
+  box-shadow: 0 4px 0 rgb(4, 65, 83);
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+} 
+#btn.disabled {
+  background: #ccc;
+  box-shadow: 0 4px 0 rgba(31, 30, 30, 0.123);  
+  opacity: 0.7;
+}
+
+#startText {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.delete {
+  display: none;
+}
+
+#result {
+  width: 300px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform .3s;
+}
+#result > p {
+  font-size: 32px;
+  color: black;
+}
+#result > a {
+  display: inline-block;
+  background:  rgb(12, 163, 223);
+  box-shadow: 0 4px 0 rgb(4, 65, 83);
+  width: 100px;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+#result > a:hover {
+  opacity: 0.65;
+}
+#result.hidden {
+  transform: translateY(-500px);
+}
